@@ -46,3 +46,6 @@ test/
 tests/
 eval/
 evals/
+
+
+agent-frontend-nextjs/**

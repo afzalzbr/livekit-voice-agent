@@ -14,12 +14,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
 class VoiceAssistant(Agent):
     """
     A friendly and helpful AI voice assistant.
     Using OpenAI for SST(Whisper), LLM(GPT-4o-mini), and TTS.
     """
-    
+
     def __init__(self) -> None:
         super().__init__(
             instructions=(
@@ -40,7 +41,7 @@ async def entrypoint(ctx: agents.JobContext):
     )
 
     logger.info("Agent session configured")
-    
+
     # Start the session
     await session.start(
         room=ctx.room,
@@ -51,7 +52,7 @@ async def entrypoint(ctx: agents.JobContext):
 
     # Generate initial greeting
     await session.generate_reply(
-        instructions="Greet the user warmly and ask how you can help them today. Ask how they are doing, and be empathetic."
+        instructions="Greet the user warmly and simply ask how they are doing, and be empathetic. Also mention that this voice agent is deployed by Afzal for showcase. Ask how you can help them today",
     )
     logger.info("Initial Greeting Sent")
 
